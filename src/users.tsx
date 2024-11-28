@@ -44,21 +44,21 @@ const UsersPage: React.FC = () => {
 
   const verifyUser = async (id: string) => {
     try {
-      const response = await fetch(`https://teamadmin-73zh.onrender.com/${id}/verify`, {
+      const response = await fetch(`https://teamadmin-73zh.onrender.com/users/${id}/verify`, { // Fixed URL
         method: 'PUT',
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to verify user');
       }
-
+  
       const updatedUser = await response.json();
       setUsers(prevUsers =>
         prevUsers.map(user =>
-          user.id === updatedUser.id ? { ...user, verified: true } : user
+          user.id === updatedUser.user.id ? { ...user, verified: true } : user
         )
       );
-
+  
       setError('User verified successfully');
     } catch (error: any) {
       setError(error.message || 'An error occurred while verifying the user');
@@ -67,27 +67,27 @@ const UsersPage: React.FC = () => {
 
   const rejectUser = async (id: string) => {
     try {
-      const response = await fetch(`https://teamadmin-73zh.onrender.com/${id}/reject`, {
+      const response = await fetch(`https://teamadmin-73zh.onrender.com/users/${id}/reject`, { // Fixed URL
         method: 'PUT',
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to reject user');
       }
-
+  
       const updatedUser = await response.json();
       setUsers(prevUsers =>
         prevUsers.map(user =>
-          user.id === updatedUser.id ? { ...user, verified: false } : user
+          user.id === updatedUser.user.id ? { ...user, verified: false } : user
         )
       );
-
+  
       setError('User rejected successfully');
     } catch (error: any) {
       setError(error.message || 'An error occurred while rejecting the user');
     }
   };
-
+  
   return (
     <Layout>
       <Box sx={{ padding: 2, flex: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>

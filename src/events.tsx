@@ -26,7 +26,7 @@ const Main: React.FC = () => {
       try {
         const response = await fetch('https://teamadmin-73zh.onrender.com/ads');
         if (!response.ok) {
-          throw new Error('Failed to fetch ads');
+          throw new Error('Failed to fetch events');
         }
         const data = await response.json();
         setAds(data);
@@ -119,7 +119,7 @@ const Main: React.FC = () => {
         />
       ) : filteredAndSortedAds.length === 0 ? (
         <Typography variant="body1" color="textSecondary">
-          No upcoming ads available.
+          No upcoming Events available.
         </Typography>
       ) : (
         <>
