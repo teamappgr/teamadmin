@@ -60,10 +60,11 @@ const UsersPage: React.FC = () => {
       );
   
       setError('User verified successfully');
+      window.location.reload();
+
     } catch (error: any) {
       setError(error.message || 'An error occurred while verifying the user');
     }
-    window.location.reload();
   };
 
   const rejectUser = async (id: string) => {
@@ -84,10 +85,11 @@ const UsersPage: React.FC = () => {
       );
   
       setError('User rejected successfully');
+      window.location.reload();
+
     } catch (error: any) {
       setError(error.message || 'An error occurred while rejecting the user');
     }
-    window.location.reload();
   };
   
   return (

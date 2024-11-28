@@ -76,11 +76,11 @@ const Main: React.FC = () => {
       }
       setAds(ads.map((ad) => (ad.id === id ? { ...ad, verified: true } : ad)));
       setError('Event verified successfully');
+      window.location.reload();
 
     } catch (error: any) {
       setError(error.message || 'An error occurred');
     }
-    window.location.reload();
   };
 
   const rejectAd = async (id: string) => {
@@ -93,11 +93,10 @@ const Main: React.FC = () => {
       }
       setAds(ads.map((ad) => (ad.id === id ? { ...ad, verified: false } : ad)));
       setError('Event rejected successfully');
-
+      window.location.reload();
     } catch (error: any) {
       setError(error.message || 'An error occurred');
     }
-    window.location.reload();
   };
 
   return (
