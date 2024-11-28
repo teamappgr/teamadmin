@@ -75,6 +75,8 @@ const Main: React.FC = () => {
         throw new Error('Failed to verify ad');
       }
       setAds(ads.map((ad) => (ad.id === id ? { ...ad, verified: true } : ad)));
+      setError('Event verified successfully');
+
     } catch (error: any) {
       setError(error.message || 'An error occurred');
     }
@@ -90,6 +92,8 @@ const Main: React.FC = () => {
         throw new Error('Failed to reject ad');
       }
       setAds(ads.map((ad) => (ad.id === id ? { ...ad, verified: false } : ad)));
+      setError('Event rejected successfully');
+
     } catch (error: any) {
       setError(error.message || 'An error occurred');
     }
