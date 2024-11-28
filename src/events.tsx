@@ -24,7 +24,7 @@ const Main: React.FC = () => {
   useEffect(() => {
     const fetchAds = async () => {
       try {
-        const response = await fetch('https://edit-9und.onrender.com/ads');
+        const response = await fetch('https://teamadmin-73zh.onrender.com/ads');
         if (!response.ok) {
           throw new Error('Failed to fetch ads');
         }
@@ -68,7 +68,7 @@ const Main: React.FC = () => {
 
   const verifyAd = async (id: string) => {
     try {
-      const response = await fetch(`https://edit-9und.onrender.com/ads/${id}/verify`, {
+      const response = await fetch(`https://teamadmin-73zh.onrender.com/ads/${id}/verify`, {
         method: 'PUT',
       });
       if (!response.ok) {
@@ -82,7 +82,7 @@ const Main: React.FC = () => {
 
   const rejectAd = async (id: string) => {
     try {
-      const response = await fetch(`https://edit-9und.onrender.com/ads/${id}/reject`, {
+      const response = await fetch(`https://teamadmin-73zh.onrender.com/ads/${id}/reject`, {
         method: 'PUT',
       });
       if (!response.ok) {

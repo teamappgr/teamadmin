@@ -12,7 +12,7 @@ const UsersPage: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('https://edit-9und.onrender.com/users');
+        const response = await fetch('https://teamadmin-73zh.onrender.com/users');
         if (!response.ok) {
           throw new Error('Failed to fetch users');
         }
@@ -44,7 +44,7 @@ const UsersPage: React.FC = () => {
 
   const verifyUser = async (id: string) => {
     try {
-      const response = await fetch(`https://edit-9und.onrender.com/${id}/verify`, {
+      const response = await fetch(`https://teamadmin-73zh.onrender.com/${id}/verify`, {
         method: 'PUT',
       });
 
@@ -67,7 +67,7 @@ const UsersPage: React.FC = () => {
 
   const rejectUser = async (id: string) => {
     try {
-      const response = await fetch(`https://edit-9und.onrender.com/${id}/reject`, {
+      const response = await fetch(`https://teamadmin-73zh.onrender.com/${id}/reject`, {
         method: 'PUT',
       });
 
