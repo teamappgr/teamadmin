@@ -78,6 +78,7 @@ const Main: React.FC = () => {
     } catch (error: any) {
       setError(error.message || 'An error occurred');
     }
+    window.location.reload();
   };
 
   const rejectAd = async (id: string) => {
@@ -92,6 +93,7 @@ const Main: React.FC = () => {
     } catch (error: any) {
       setError(error.message || 'An error occurred');
     }
+    window.location.reload();
   };
 
   return (
