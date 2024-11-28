@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>  {/* Wrapping the app in Router */}
       <Routes>  {/* Define routes inside Routes */}
-        <Route path="/teamadmin" element={<Events />} />  {/* Define your Events route */}
+        <Route path="/" element={<Events />} />  {/* Define your Events route */}
         <Route path="/users" element={<Users />} />  {/* Define your Events route */}
       </Routes>
     </Router>
